@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Authentication - Yasin OSMAN</title>
+</head>
+<body>
+    <div id="logged-out" class="display-none">
+        <div id="container-form-register">
+            <h2 id="header-form-register">Register</h2>
+            <form id="form-register" method="POST">
+                <div>
+                    <label for="register-name">Name:</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div>
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div>
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div>
+                    <p id="p-register-form-error"></p>
+                    <button type="submit" id="button-form-register">Register</button>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+        <div id="container-form-login">
+            <h2 id="header-form-login">Login</h2>
+            <form id="form-login" method="POST">
+                <div>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div>
+                    <p id="p-login-form-error"></p>
+                    <button type="submit" id="button-form-login">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="logged-in" class="display-none"></div>
+
+    <div id="loading-container">
+        <div class="loader"></div>
+    </div>
+</body>
+
+<style>
+    .display-none{
+        display:none;
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #43136b; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+</style>
+
+<script src="helpers.js"></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+</html>
