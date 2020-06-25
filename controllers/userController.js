@@ -1,8 +1,8 @@
 const User = require('../models/User')
 
-const userController = {}
+const controller = {}
 
-userController.getUserData = (req, res) => {
+controller.getCurrentUser = (req, res) => {
     User.findById(req.user._id)
         .select('-password')
         .then(user => {res.status(200).json(
@@ -12,4 +12,4 @@ userController.getUserData = (req, res) => {
         )})
 }
 
-module.exports = userController
+module.exports = controller
